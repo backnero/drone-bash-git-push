@@ -1,9 +1,15 @@
 #!/bin/sh
 mkdir ~/.ssh
 chmod -R 0700 ~/.ssh
-echo "Host *\nAddKeysToAgent yes\nUseKeychain yes\nIdentityFile ~/.ssh/id_rsa" > ~/.ssh/config
+echo "Host *" > ~/.ssh/config
+echo "AddKeysToAgent yes" > ~/.ssh/config
+echo "UseKeychain yes" > ~/.ssh/config
+echo "IdentityFile ~/.ssh/id_rsa" > ~/.ssh/config
 chmod -R 0700 ~/.ssh/config
-echo  ${PLUGIN_KEY} > ~/.ssh/id_rsa
+# echo  ${PLUGIN_KEY} > ~/.ssh/id_rsa
+cat>~/.ssh/id_rsa<<EOF
+${PLUGIN_KEY}
+EOF
 chmod -R 0600 ~/.ssh/id_rsa
 echo "=======ssh=config======="
 cat ~/.ssh/config
