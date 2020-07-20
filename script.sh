@@ -23,4 +23,5 @@ git remote add deploy ${PLUGIN_REMOTE}
 echo "=======git remote -v======="
 git remote -v
 git add --all
+git commit -m ${PLUGIN_COMMITMESSAGE}
 git push ${PLUGIN_REMOTE} ${PLUGIN_BRANCH} --force

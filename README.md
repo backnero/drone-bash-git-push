@@ -11,6 +11,7 @@
         remote: git@git.github.com:abc.git
         author_name: username
         author_email: admin@admin.com
+        commitmessage: depoly
 ```
 
 
