@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if [ ！ -z ${PLUGIN_PATH}];then
+if [ ！ -z ${PLUGIN_PATH} ];then
     cd ${PLUGIN_PATH}
 fi
-if [ ! -d "~/.ssh"];then
+if [ ! -d "~/.ssh" ];then
     mkdir ~/.ssh
     chmod -R 0700 ~/.ssh
 fi
