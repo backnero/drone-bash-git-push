@@ -12,6 +12,5 @@ cat ~/.ssh/id_rsa
 cd ${PLUGIN_PATH}
 git init
 git remote add deploy ${PLUGIN_REMOTE}
-git add --all
-git diff-index --quiet HEAD --ignore-submodules
-git push deploy HEAD:${PLUGIN_BRANCH} --force
+git add .
+git push deploy ${PLUGIN_BRANCH} --force
