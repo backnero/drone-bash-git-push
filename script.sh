@@ -1,6 +1,7 @@
 #!/bin/sh
 mkdir ~/.ssh
 chmod -R 0700 ~/.ssh
+echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
 # echo  ${PLUGIN_KEY} > ~/.ssh/id_rsa
 cat>~/.ssh/id_rsa<<EOF
 ${PLUGIN_KEY}
