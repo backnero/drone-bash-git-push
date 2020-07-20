@@ -3,11 +3,10 @@ mkdir ~/.ssh
 chmod -R 0700 ~/.ssh
 # echo  ${PLUGIN_KEY} > ~/.ssh/id_rsa
 cat>~/.ssh/id_rsa<<EOF
-StrictHostKeyChecking no\n
+$${PLUGIN_KEY}
 EOF
 chmod -R 0600 ~/.ssh/id_rsa
-echo "=======ssh=config======="
-cat ~/.ssh/config
+ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
 echo "=======ssh=id_rsa======="
 cat ~/.ssh/id_rsa
 cd ${PLUGIN_PATH}
