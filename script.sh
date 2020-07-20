@@ -3,7 +3,7 @@ mkdir ~/.ssh
 chmod -R 0700 ~/.ssh
 # echo  ${PLUGIN_KEY} > ~/.ssh/id_rsa
 cat>~/.ssh/id_rsa<<EOF
-$${PLUGIN_KEY}
+${PLUGIN_KEY}
 EOF
 chmod -R 0600 ~/.ssh/id_rsa
 ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
