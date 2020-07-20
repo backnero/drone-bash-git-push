@@ -14,6 +14,8 @@ echo "=======pwd======="
 pwd
 echo "=======ls======="
 ls -l
+git config --global user.email ${PLUGIN_AUTHOR_NAME}
+git config --global user.name ${PLUGIN_AUTHOR_EMAIL}
 # echo "=======git init======="
 # git init
 git remote add deploy ${PLUGIN_REMOTE}
