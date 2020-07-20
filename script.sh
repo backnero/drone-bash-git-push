@@ -1,7 +1,7 @@
 #!/bin/sh
 mkdir ~/.ssh
 chmod -R 0700 ~/.ssh
-echo "LogLevel=quiet" > ~/.ssh/config
+echo "Host *\nAddKeysToAgent yes\nUseKeychain yes\nIdentityFile ~/.ssh/id_rsa" > ~/.ssh/config
 chmod -R 0700 ~/.ssh/config
 echo  ${PLUGIN_KEY} > ~/.ssh/id_rsa
 chmod -R 0600 ~/.ssh/id_rsa
@@ -19,5 +19,5 @@ ls -l
 git remote add deploy ${PLUGIN_REMOTE}
 echo "=======git remote -v======="
 git remote -v
-git add .
-git push deploy ${PLUGIN_BRANCH} --force
+git add --all
+git push ${PLUGIN_REMOTE} ${PLUGIN_BRANCH} --force
