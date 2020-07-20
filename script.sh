@@ -10,7 +10,14 @@ cat ~/.ssh/config
 echo "=======ssh=id_rsa======="
 cat ~/.ssh/id_rsa
 cd ${PLUGIN_PATH}
-git init
+echo "=======pwd======="
+pwd
+echo "=======ls======="
+ls -l
+# echo "=======git init======="
+# git init
 git remote add deploy ${PLUGIN_REMOTE}
+echo "=======git remote -v======="
+git remote -v
 git add .
 git push deploy ${PLUGIN_BRANCH} --force
